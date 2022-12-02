@@ -19,7 +19,7 @@ class Round(val elve: String, val me: String) {
 
     fun getPoints() = when {
         isDraw() -> 3 + getElvePoints()
-        isWin() -> 6 + if (getElvePoints() + 1 == 4)  1 else getElvePoints() + 1
+        isWin() -> 6 + getElvePoints() % 3 + 1
         else -> if (getElvePoints() - 1 == 0)  3 else getElvePoints() - 1
     }
 

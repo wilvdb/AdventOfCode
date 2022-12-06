@@ -1,7 +1,7 @@
 import java.io.File
 
 
-val elvespairs = File("input1.txt").readLinesAs { ElvesPair(it) }
+val elvespairs = File("input2.txt").readLinesAs { ElvesPair(it) }
 
 
 println("Result : ${elvespairs.count { it.isContained() }}")
@@ -19,5 +19,5 @@ class ElvesPair(input: String) {
         sections2 = ranges[1].split("-")[0].toInt()..ranges[1].split("-")[1].toInt()
     }
 
-    fun isContained() = sections1.all { sections2.contains(it) } || sections2.all { sections1.contains(it) }
+    fun isContained() = sections1.any { sections2.contains(it) } || sections2.any { sections1.contains(it) }
 }

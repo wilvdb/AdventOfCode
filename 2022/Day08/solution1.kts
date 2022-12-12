@@ -1,6 +1,6 @@
 import java.io.File
 
-
+//1717
 val trees = File("input1.txt").readLinesAs { it.map { c -> c.digitToInt() } }
 
 
@@ -19,6 +19,14 @@ fun countVisibleTrees(trees: List<List<Int>>): Int {
   }
 
     return count;
+}
+
+class Tree(x: Int, y: Int, size: Int) {
+
+    var leftTree: Tree? = null
+    var rightTree: Tree? = null
+    var upTree: Tree? = null
+    var bottomTree: Tree? = null
 }
 
 fun isVisible(trees: List<List<Int>>, x: Int, y: Int): Boolean {
